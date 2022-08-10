@@ -29,7 +29,7 @@ export default function Calendar({ date = new Date() }: { date: Date }) {
     if (typeof item !== 'string' && item != -1) {
       const newDate = new Date(activeDate.setDate(item));
       setActiveDate(newDate);
-      setVIsible(!visible)
+      // setVIsible(!visible)
       console.log(newDate.getDate())
       console.log(newDate.getMonth() + 1)
       console.log(newDate.getFullYear())
@@ -39,6 +39,9 @@ export default function Calendar({ date = new Date() }: { date: Date }) {
       var dateValue = day +"/" + month + "/"+ year;
       setDateValue(dateValue)
 
+        setTimeout(() => {
+          setVIsible(!visible)
+        }, 0.5 * 1000);
     }
   };
 
